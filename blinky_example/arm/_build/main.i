@@ -9086,24 +9086,24 @@ typedef struct {
 
  
 
-static void __inline nrf_delay_us(uint32_t volatile number_of_us)
+static __asm void __inline nrf_delay_us(uint32_t volatile number_of_us)
 {
-__asm (
-"loop:\n\t"
-       " SUBS R0, R0, #1\n\t"
-       " NOP\n\t"
-       " NOP\n\t"
-       " NOP\n\t"
-       " NOP\n\t"
-       " NOP\n\t"
-       " NOP\n\t"
-       " NOP\n\t"
-       " NOP\n\t"
-       " NOP\n\t"
-       " NOP\n\t"
-       " NOP\n\t"
-       " NOP\n\t"
-       " BNE loop\n\t");
+loop
+        SUBS    R0, R0, #1
+        NOP
+        NOP
+        NOP
+        NOP
+        NOP
+        NOP
+        NOP
+        NOP
+        NOP
+        NOP
+        NOP
+        NOP
+        BNE    loop
+        BX     LR
 }
 #line 71 "..\\..\\..\\..\\Include\\nrf_delay.h"
 
