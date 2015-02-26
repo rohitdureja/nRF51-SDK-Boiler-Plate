@@ -1,5 +1,5 @@
 /* 
- * nRF51822xxxx as TX and nRF24L01+ as Reciever
+ * nRF51822xxxx as RX and nRF24L01+ as Transmitter
  */
 
 #include <stdbool.h>
