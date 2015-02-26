@@ -1,0 +1,10 @@
+# Compile time files #
+######################
+*.Lab
+*.bak
+*.dep
+
+# JLink Files #
+###############
+JLinkLog.txt
+JLinkSetting.ini
