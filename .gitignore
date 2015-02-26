@@ -3,6 +3,7 @@
 *.Lab
 *.bak
 *.dep
+_build/
 
 # JLink Files #
 ###############
