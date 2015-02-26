@@ -274,34 +274,34 @@ Image Symbol Table
     i.simple_uart_config                     0x00002e64   Section        0  simple_uart.o(i.simple_uart_config)
     .constdata                               0x00002ed0   Section       48  nrf_link_core.o(.constdata)
     operation_params                         0x00002ed0   Data          48  nrf_link_core.o(.constdata)
-    .data                                    0x20000000   Section       10  main.o(.data)
-    my_tx_payload                            0x20000000   Data          10  main.o(.data)
-    .data                                    0x2000000c   Section        4  system_nrf51.o(.data)
-    __tagsym$$used                           0x2000000c   Number         0  system_nrf51.o(.data)
-    .data                                    0x20000010   Section       16  nrf_esb.o(.data)
-    bool_arg                                 0x20000010   Data           1  nrf_esb.o(.data)
-    status                                   0x20000018   Data           4  nrf_esb.o(.data)
-    .data                                    0x20000020   Section        8  nrf_impala.o(.data)
-    lcore_status                             0x20000024   Data           4  nrf_impala.o(.data)
-    .data                                    0x20000028   Section       12  nrf_channel_manager.o(.data)
-    config                                   0x20000028   Data           4  nrf_channel_manager.o(.data)
-    status                                   0x2000002c   Data           8  nrf_channel_manager.o(.data)
-    .data                                    0x20000034   Section        8  nrf_flywheel.o(.data)
-    task_is_delayed                          0x20000035   Data           1  nrf_flywheel.o(.data)
-    waiting_on_handler                       0x20000036   Data           1  nrf_flywheel.o(.data)
-    pending_cb                               0x20000038   Data           4  nrf_flywheel.o(.data)
-    .data                                    0x2000003c   Section        4  nrf_link_core.o(.data)
-    nrf_lcore_config                         0x2000003c   Data           4  nrf_link_core.o(.data)
-    .data                                    0x20000040   Section        8  nrf_packet_manager.o(.data)
-    .data                                    0x20000048   Section       12  nrf_state_machine.o(.data)
-    .data                                    0x20000054   Section        4  nrf_fifo.o(.data)
-    .bss                                     0x20000058   Section       96  nrf_impala.o(.bss)
-    chm_config                               0x200000ac   Data          12  nrf_impala.o(.bss)
-    .bss                                     0x200000b8   Section       36  nrf_link_core.o(.bss)
-    .bss                                     0x200000dc   Section      136  nrf_notification_manager.o(.bss)
-    .bss                                     0x20000164   Section      148  nrf_packet_manager.o(.bss)
-    .bss                                     0x200001f8   Section      468  nrf_fifo.o(.bss)
-    STACK                                    0x200003d0   Section     2048  startup_arm_nrf51.o(STACK)
+    .data                                    0x20000000   Section       20  main.o(.data)
+    my_tx_payload                            0x20000000   Data          20  main.o(.data)
+    .data                                    0x20000014   Section        4  system_nrf51.o(.data)
+    __tagsym$$used                           0x20000014   Number         0  system_nrf51.o(.data)
+    .data                                    0x20000018   Section       16  nrf_esb.o(.data)
+    bool_arg                                 0x20000018   Data           1  nrf_esb.o(.data)
+    status                                   0x20000020   Data           4  nrf_esb.o(.data)
+    .data                                    0x20000028   Section        8  nrf_impala.o(.data)
+    lcore_status                             0x2000002c   Data           4  nrf_impala.o(.data)
+    .data                                    0x20000030   Section       12  nrf_channel_manager.o(.data)
+    config                                   0x20000030   Data           4  nrf_channel_manager.o(.data)
+    status                                   0x20000034   Data           8  nrf_channel_manager.o(.data)
+    .data                                    0x2000003c   Section        8  nrf_flywheel.o(.data)
+    task_is_delayed                          0x2000003d   Data           1  nrf_flywheel.o(.data)
+    waiting_on_handler                       0x2000003e   Data           1  nrf_flywheel.o(.data)
+    pending_cb                               0x20000040   Data           4  nrf_flywheel.o(.data)
+    .data                                    0x20000044   Section        4  nrf_link_core.o(.data)
+    nrf_lcore_config                         0x20000044   Data           4  nrf_link_core.o(.data)
+    .data                                    0x20000048   Section        8  nrf_packet_manager.o(.data)
+    .data                                    0x20000050   Section       12  nrf_state_machine.o(.data)
+    .data                                    0x2000005c   Section        4  nrf_fifo.o(.data)
+    .bss                                     0x20000060   Section       96  nrf_impala.o(.bss)
+    chm_config                               0x200000b4   Data          12  nrf_impala.o(.bss)
+    .bss                                     0x200000c0   Section       36  nrf_link_core.o(.bss)
+    .bss                                     0x200000e4   Section      136  nrf_notification_manager.o(.bss)
+    .bss                                     0x2000016c   Section      148  nrf_packet_manager.o(.bss)
+    .bss                                     0x20000200   Section      468  nrf_fifo.o(.bss)
+    STACK                                    0x200003d8   Section     2048  startup_arm_nrf51.o(STACK)
 
     Global Symbols
 
@@ -557,26 +557,26 @@ Image Symbol Table
     simple_uart_config                       0x00002e65   Thumb Code    90  simple_uart.o(i.simple_uart_config)
     Region$$Table$$Base                      0x00002f00   Number         0  anon$$obj.o(Region$$Table)
     Region$$Table$$Limit                     0x00002f10   Number         0  anon$$obj.o(Region$$Table)
-    SystemCoreClock                          0x2000000c   Data           4  system_nrf51.o(.data)
-    assert_count                             0x20000014   Data           4  nrf_esb.o(.data)
-    impl_status                              0x2000001c   Data           4  nrf_esb.o(.data)
-    impl_async_state                         0x20000020   Data           1  nrf_impala.o(.data)
-    runstate                                 0x20000034   Data           1  nrf_flywheel.o(.data)
-    nrf_pm_ack_payload_pending               0x20000040   Data           8  nrf_packet_manager.o(.data)
-    sm_status                                0x20000048   Data           3  nrf_state_machine.o(.data)
-    state_functions                          0x2000004c   Data           8  nrf_state_machine.o(.data)
-    available_packet_count                   0x20000054   Data           4  nrf_fifo.o(.data)
-    impl_internal_params                     0x20000058   Data          32  nrf_impala.o(.bss)
-    nrf_impl_status                          0x20000078   Data          28  nrf_impala.o(.bss)
-    lcore_config                             0x20000094   Data          24  nrf_impala.o(.bss)
-    nrf_lcore_status                         0x200000b8   Data          36  nrf_link_core.o(.bss)
-    nm_status                                0x200000dc   Data         136  nrf_notification_manager.o(.bss)
-    pm_status                                0x20000164   Data         148  nrf_packet_manager.o(.bss)
-    pipe_status                              0x200001f8   Data          48  nrf_fifo.o(.bss)
-    fifo_contents                            0x20000228   Data         192  nrf_fifo.o(.bss)
-    available_packets                        0x200002e8   Data          24  nrf_fifo.o(.bss)
-    packet_pool                              0x20000300   Data         204  nrf_fifo.o(.bss)
-    __initial_sp                             0x20000bd0   Data           0  startup_arm_nrf51.o(STACK)
+    SystemCoreClock                          0x20000014   Data           4  system_nrf51.o(.data)
+    assert_count                             0x2000001c   Data           4  nrf_esb.o(.data)
+    impl_status                              0x20000024   Data           4  nrf_esb.o(.data)
+    impl_async_state                         0x20000028   Data           1  nrf_impala.o(.data)
+    runstate                                 0x2000003c   Data           1  nrf_flywheel.o(.data)
+    nrf_pm_ack_payload_pending               0x20000048   Data           8  nrf_packet_manager.o(.data)
+    sm_status                                0x20000050   Data           3  nrf_state_machine.o(.data)
+    state_functions                          0x20000054   Data           8  nrf_state_machine.o(.data)
+    available_packet_count                   0x2000005c   Data           4  nrf_fifo.o(.data)
+    impl_internal_params                     0x20000060   Data          32  nrf_impala.o(.bss)
+    nrf_impl_status                          0x20000080   Data          28  nrf_impala.o(.bss)
+    lcore_config                             0x2000009c   Data          24  nrf_impala.o(.bss)
+    nrf_lcore_status                         0x200000c0   Data          36  nrf_link_core.o(.bss)
+    nm_status                                0x200000e4   Data         136  nrf_notification_manager.o(.bss)
+    pm_status                                0x2000016c   Data         148  nrf_packet_manager.o(.bss)
+    pipe_status                              0x20000200   Data          48  nrf_fifo.o(.bss)
+    fifo_contents                            0x20000230   Data         192  nrf_fifo.o(.bss)
+    available_packets                        0x200002f0   Data          24  nrf_fifo.o(.bss)
+    packet_pool                              0x20000308   Data         204  nrf_fifo.o(.bss)
+    __initial_sp                             0x20000bd8   Data           0  startup_arm_nrf51.o(STACK)
 
 
 
@@ -586,7 +586,7 @@ Memory Map of the image
 
   Image Entry point : 0x000000c1
 
-  Load Region LR_IROM1 (Base: 0x00000000, Size: 0x00002f68, Max: 0x00040000, ABSOLUTE)
+  Load Region LR_IROM1 (Base: 0x00000000, Size: 0x00002f70, Max: 0x00040000, ABSOLUTE)
 
     Execution Region ER_IROM1 (Base: 0x00000000, Size: 0x00002f10, Max: 0x00040000, ABSOLUTE)
 
@@ -653,28 +653,27 @@ Memory Map of the image
     0x00002f00   0x00000010   Data   RO          387    Region$$Table       anon$$obj.o
 
 
-    Execution Region RW_IRAM1 (Base: 0x20000000, Size: 0x00000bd0, Max: 0x00004000, ABSOLUTE, UNINIT)
+    Execution Region RW_IRAM1 (Base: 0x20000000, Size: 0x00000bd8, Max: 0x00004000, ABSOLUTE, UNINIT)
 
     Base Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x20000000   0x0000000a   Data   RW           13    .data               main.o
-    0x2000000a   0x00000002   PAD
-    0x2000000c   0x00000004   Data   RW          136    .data               system_nrf51.o
-    0x20000010   0x00000010   Data   RW          267    .data               esb_arm.lib(nrf_esb.o)
-    0x20000020   0x00000008   Data   RW          275    .data               esb_arm.lib(nrf_impala.o)
-    0x20000028   0x0000000c   Data   RW          298    .data               esb_arm.lib(nrf_channel_manager.o)
-    0x20000034   0x00000008   Data   RW          306    .data               esb_arm.lib(nrf_flywheel.o)
-    0x2000003c   0x00000004   Data   RW          317    .data               esb_arm.lib(nrf_link_core.o)
-    0x20000040   0x00000008   Data   RW          335    .data               esb_arm.lib(nrf_packet_manager.o)
-    0x20000048   0x0000000c   Data   RW          344    .data               esb_arm.lib(nrf_state_machine.o)
-    0x20000054   0x00000004   Data   RW          352    .data               esb_arm.lib(nrf_fifo.o)
-    0x20000058   0x00000060   Zero   RW          274    .bss                esb_arm.lib(nrf_impala.o)
-    0x200000b8   0x00000024   Zero   RW          315    .bss                esb_arm.lib(nrf_link_core.o)
-    0x200000dc   0x00000088   Zero   RW          327    .bss                esb_arm.lib(nrf_notification_manager.o)
-    0x20000164   0x00000094   Zero   RW          334    .bss                esb_arm.lib(nrf_packet_manager.o)
-    0x200001f8   0x000001d4   Zero   RW          351    .bss                esb_arm.lib(nrf_fifo.o)
-    0x200003cc   0x00000004   PAD
-    0x200003d0   0x00000800   Zero   RW          123    STACK               startup_arm_nrf51.o
+    0x20000000   0x00000014   Data   RW           13    .data               main.o
+    0x20000014   0x00000004   Data   RW          136    .data               system_nrf51.o
+    0x20000018   0x00000010   Data   RW          267    .data               esb_arm.lib(nrf_esb.o)
+    0x20000028   0x00000008   Data   RW          275    .data               esb_arm.lib(nrf_impala.o)
+    0x20000030   0x0000000c   Data   RW          298    .data               esb_arm.lib(nrf_channel_manager.o)
+    0x2000003c   0x00000008   Data   RW          306    .data               esb_arm.lib(nrf_flywheel.o)
+    0x20000044   0x00000004   Data   RW          317    .data               esb_arm.lib(nrf_link_core.o)
+    0x20000048   0x00000008   Data   RW          335    .data               esb_arm.lib(nrf_packet_manager.o)
+    0x20000050   0x0000000c   Data   RW          344    .data               esb_arm.lib(nrf_state_machine.o)
+    0x2000005c   0x00000004   Data   RW          352    .data               esb_arm.lib(nrf_fifo.o)
+    0x20000060   0x00000060   Zero   RW          274    .bss                esb_arm.lib(nrf_impala.o)
+    0x200000c0   0x00000024   Zero   RW          315    .bss                esb_arm.lib(nrf_link_core.o)
+    0x200000e4   0x00000088   Zero   RW          327    .bss                esb_arm.lib(nrf_notification_manager.o)
+    0x2000016c   0x00000094   Zero   RW          334    .bss                esb_arm.lib(nrf_packet_manager.o)
+    0x20000200   0x000001d4   Zero   RW          351    .bss                esb_arm.lib(nrf_fifo.o)
+    0x200003d4   0x00000004   PAD
+    0x200003d8   0x00000800   Zero   RW          123    STACK               startup_arm_nrf51.o
 
 
 ==============================================================================
@@ -684,16 +683,16 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
-       270         20          0         10          0      11231   main.o
+       270         20          0         20          0      11231   main.o
         58          4          0          0          0       1443   nrf_delay.o
        146         18          0          0          0       3761   simple_uart.o
         44         14        192          0       2048        688   startup_arm_nrf51.o
        220         26          0          4          0       1939   system_nrf51.o
 
     ----------------------------------------------------------------------
-       740         82        208         16       2048      19062   Object Totals
+       740         82        208         24       2048      19062   Object Totals
          0          0         16          0          0          0   (incl. Generated)
-         2          0          0          2          0          0   (incl. Padding)
+         2          0          0          0          0          0   (incl. Padding)
 
     ----------------------------------------------------------------------
 
@@ -744,15 +743,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-     11792       1090        256         88       2936      23178   Grand Totals
-     11792       1090        256         88       2936      23178   ELF Image Totals
-     11792       1090        256         88          0          0   ROM Totals
+     11792       1090        256         96       2936      23178   Grand Totals
+     11792       1090        256         96       2936      23178   ELF Image Totals
+     11792       1090        256         96          0          0   ROM Totals
 
 ==============================================================================
 
     Total RO  Size (Code + RO Data)                12048 (  11.77kB)
-    Total RW  Size (RW Data + ZI Data)              3024 (   2.95kB)
-    Total ROM Size (Code + RO Data + RW Data)      12136 (  11.85kB)
+    Total RW  Size (RW Data + ZI Data)              3032 (   2.96kB)
+    Total ROM Size (Code + RO Data + RW Data)      12144 (  11.86kB)
 
 ==============================================================================
 

@@ -1,4 +1,4 @@
-;#<FEEDBACK># ARM Linker, 5040049: Last Updated: Thu Feb 26 12:45:00 2015
+;#<FEEDBACK># ARM Linker, 5040049: Last Updated: Thu Feb 26 15:53:31 2015
 ;VERSION 0.2
 ;FILE main.o
 __asm___6_main_c_main____REV16 <= USED 0
@@ -18,13 +18,16 @@ nrf_chm_ticks_until_desired_channel <= USED 0
 ;FILE nrf_delay.o
 __asm___11_nrf_delay_c_532987f3____REV16 <= USED 0
 __asm___11_nrf_delay_c_532987f3____REVSH <= USED 0
+__asm___11_nrf_delay_c_532987f3__nrf_delay_us <= USED 0
+nrf_delay_ms <= USED 0
 ;FILE nrf_esb.o
 __asm___9_nrf_esb_c_302ec191____REV16 <= USED 0
 __asm___9_nrf_esb_c_302ec191____REVSH <= USED 0
+nrf_esb_add_packet_to_tx_fifo <= USED 0
 nrf_esb_disable <= USED 0
 nrf_esb_disable_dyn_ack <= USED 0
 nrf_esb_enable_dyn_ack <= USED 0
-nrf_esb_fetch_packet_from_rx_fifo <= USED 0
+nrf_esb_flush_tx_fifo <= USED 0
 nrf_esb_get_address_prefix_byte <= USED 0
 nrf_esb_get_base_address_0 <= USED 0
 nrf_esb_get_base_address_1 <= USED 0
@@ -58,6 +61,8 @@ __asm___12_nrf_impala_c_ea0749ed____REVSH <= USED 0
 async_state_rx_active <= USED 0
 nrf_gpio_debug_pin_write <= USED 0
 nrf_impl_disable <= USED 0
+nrf_impl_flush_tx_fifo <= USED 0
+nrf_impl_get_available_fifo_packets <= USED 0
 nrf_impl_get_base_address_length <= USED 0
 nrf_impl_get_channel_selection_policy <= USED 0
 nrf_impl_get_idle_activity_config <= USED 0
@@ -71,11 +76,13 @@ nrf_impl_get_sync_lifetime <= USED 0
 nrf_impl_get_timeslot_period <= USED 0
 nrf_impl_get_timeslots_per_channel_when_in_sync <= USED 0
 nrf_impl_get_timeslots_per_channel_when_out_of_sync <= USED 0
+nrf_impl_get_tx_fifo_status <= USED 0
 nrf_impl_get_xosc_ctl <= USED 0
 nrf_impl_is_disabled <= USED 0
-nrf_impl_pop_rx_fifo <= USED 0
+nrf_impl_put_tx_fifo <= USED 0
 nrf_impl_read_rx_fifo <= USED 0
 nrf_impl_read_tx_fifo <= USED 0
+nrf_impl_reserve_packet <= USED 0
 nrf_impl_set_channel_selection_policy <= USED 0
 nrf_impl_set_dyn_ack_enable <= USED 0
 nrf_impl_set_idle_activity_config <= USED 0
@@ -94,10 +101,14 @@ __asm___26_nrf_notification_manager_c_0a76087d____REVSH <= USED 0
 ;FILE nrf_packet_manager.o
 __asm___20_nrf_packet_manager_c_3d97efee____REV16 <= USED 0
 __asm___20_nrf_packet_manager_c_3d97efee____REVSH <= USED 0
+nrf_pm_flush_tx_fifo <= USED 0
 nrf_pm_get_ack_payload_pending <= USED 0
-nrf_pm_pop_rx_fifo <= USED 0
+nrf_pm_get_available_fifo_packets <= USED 0
+nrf_pm_get_tx_fifo_status <= USED 0
+nrf_pm_put_tx_fifo <= USED 0
 nrf_pm_read_rx_fifo <= USED 0
 nrf_pm_read_tx_fifo <= USED 0
+nrf_pm_reserve_packet <= USED 0
 ;FILE nrf_state_machine.o
 __asm___19_nrf_state_machine_c_0b21e821____REV16 <= USED 0
 __asm___19_nrf_state_machine_c_0b21e821____REVSH <= USED 0
@@ -108,8 +119,6 @@ __asm___13_simple_uart_c_5dda6715____REVSH <= USED 0
 __asm___13_simple_uart_c_5dda6715__nrf_delay_us <= USED 0
 simple_uart_get <= USED 0
 simple_uart_get_with_timeout <= USED 0
-simple_uart_put <= USED 0
-simple_uart_putstring <= USED 0
 ;FILE startup_arm_nrf51.o
 ;FILE system_nrf51.o
 SystemCoreClockUpdate <= USED 0

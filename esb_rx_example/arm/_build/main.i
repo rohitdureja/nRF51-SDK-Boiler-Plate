@@ -10380,7 +10380,7 @@ void simple_uart_config(uint8_t rts_pin_number, uint8_t txd_pin_number, uint8_t 
 
 
 
-static uint8_t my_tx_payload[] = {0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08, 0x09, 0x0A, 0x0B, 0x0C, 0x0D, 0x0E, 0x0F, 0x10, 0x11, 0x12, 0x13, 0x14 }; 
+static uint8_t my_rx_payload[20]; 
 
 
 static void esb_init(void) {
@@ -10389,7 +10389,7 @@ static void esb_init(void) {
 	nrf_esb_set_xosc_ctl(NRF_ESB_XOSC_CTL_AUTO);
 	
 	
-	nrf_esb_init(NRF_ESB_MODE_PTX);
+	nrf_esb_init(NRF_ESB_MODE_PRX);
 	
 	
 	nrf_esb_set_crc_length(NRF_ESB_CRC_LENGTH_2_BYTE);
@@ -10433,34 +10433,33 @@ int main(void) {
 	
 	
 	esb_init();
-	
-	
-	nrf_esb_add_packet_to_tx_fifo(0, my_tx_payload, 20, NRF_ESB_PACKET_USE_ACK);
 
 	nrf_esb_enable();
 
 	while (1) {
-		
-		nrf_delay_ms(500);
-		nrf_esb_add_packet_to_tx_fifo(0, my_tx_payload, 20, NRF_ESB_PACKET_USE_ACK);
 	}
 
 }
 
 void nrf_esb_tx_success(uint32_t tx_pipe, int32_t rssi) {
 	
-	nrf_gpio_pin_toggle(18);
 }
 
 
 void nrf_esb_tx_failed(uint32_t tx_pipe) {
 	
-	nrf_gpio_pin_toggle(19);
-	nrf_esb_flush_tx_fifo(0);
 }
 
 
 void nrf_esb_rx_data_ready(uint32_t rx_pipe, int32_t rssi) {
+	uint32_t rx_payload_length;
+	
+	
+	nrf_esb_fetch_packet_from_rx_fifo(0, my_rx_payload, &rx_payload_length);
+	if(rx_payload_length > 0) {
+		nrf_gpio_pin_toggle(18);
+		simple_uart_putstring(my_rx_payload);
+	}
 	
 	nrf_esb_flush_rx_fifo(0);
 }

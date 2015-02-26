@@ -1,5 +1,5 @@
-Dependencies for Project 'esb_tx_example', Target 'nrf51822_xxaa (256K)': (DO NOT MODIFY !)
-F (..\main.c)(0x54EF5B98)(-c --cpu Cortex-M0 -D__EVAL -D__MICROLIB --li -g -O0 --apcs=interwork --split_sections -I..\..\..\..\Include --c99-I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-DNRF51 -DNRF51 -DBOARD_PCA10001-o .\_build\main.o --omf_browse .\_build\main.crf --depend .\_build\main.d)
+Dependencies for Project 'esb_rx_example', Target 'nrf51822_xxaa (256K)': (DO NOT MODIFY !)
+F (..\main.c)(0x54EF87C4)(-c --cpu Cortex-M0 -D__EVAL -D__MICROLIB --li -g -O0 --apcs=interwork --split_sections -I..\..\..\..\Include --c99-I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-DNRF51 -DNRF51 -DBOARD_PCA10001-o .\_build\main.o --omf_browse .\_build\main.crf --depend .\_build\main.d)
 I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5346D4F4)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5346D4F4)
 I (..\..\..\..\Include\nrf.h)(0x52B2B69C)
@@ -43,7 +43,6 @@ I (..\..\..\..\Include\system_nrf51.h)(0x52B2B69B)
 I (..\..\..\..\Include\nrf51_bitfields.h)(0x52B2B69A)
 I (..\..\..\..\Include\nrf51_deprecated.h)(0x52B2B69C)
 I (..\..\..\..\Include\nrf_delay.h)(0x54EE9309)
-F (..\..\..\..\Lib\esb\arm\esb_arm.lib)(0x5272375F)()
 F (..\..\..\..\Source\simple_uart\simple_uart.c)(0x54E937DE)(-c --cpu Cortex-M0 -D__EVAL -D__MICROLIB --li -g -O0 --apcs=interwork --split_sections -I..\..\..\..\Include --c99-I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-DNRF51 -DNRF51 -DBOARD_PCA10001-o .\_build\simple_uart.o --omf_browse .\_build\simple_uart.crf --depend .\_build\simple_uart.d)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5346D4F4)
 I (..\..\..\..\Include\nrf.h)(0x52B2B69C)
@@ -59,3 +58,4 @@ I (..\..\..\..\Include\simple_uart.h)(0x54E93457)
 I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5346D4F4)
 I (..\..\..\..\Include\nrf_delay.h)(0x54EE9309)
 I (..\..\..\..\Include\nrf_gpio.h)(0x52B46A70)
+F (..\..\..\..\Lib\esb\arm\esb_arm.lib)(0x5272375F)()

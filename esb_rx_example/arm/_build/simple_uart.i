@@ -1,27 +1,16 @@
-#line 1 "..\\main.c"
+#line 1 "..\\..\\..\\..\\Source\\simple_uart\\simple_uart.c"
+
+
+
+
+
+
+
+
 
 
  
 
-#line 1 "C:\\Keil_v5\\ARM\\ARMCC\\bin\\..\\include\\stdbool.h"
- 
-
-
-
-
-
-
- 
-
-
-
-
-
-#line 25 "C:\\Keil_v5\\ARM\\ARMCC\\bin\\..\\include\\stdbool.h"
-
-
-
-#line 6 "..\\main.c"
 #line 1 "C:\\Keil_v5\\ARM\\ARMCC\\bin\\..\\include\\stdint.h"
  
  
@@ -258,7 +247,8 @@ typedef unsigned       __int64 uintmax_t;
 
 
 
-#line 7 "..\\main.c"
+#line 14 "..\\..\\..\\..\\Source\\simple_uart\\simple_uart.c"
+
 #line 1 "..\\..\\..\\..\\Include\\nrf.h"
 
 
@@ -9059,7 +9049,131 @@ typedef struct {
 
 
 
-#line 8 "..\\main.c"
+#line 16 "..\\..\\..\\..\\Source\\simple_uart\\simple_uart.c"
+#line 1 "..\\..\\..\\..\\Include\\simple_uart.h"
+ 
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+ 
+
+#line 1 "C:\\Keil_v5\\ARM\\ARMCC\\bin\\..\\include\\stdbool.h"
+ 
+
+
+
+
+
+
+ 
+
+
+
+
+
+#line 25 "C:\\Keil_v5\\ARM\\ARMCC\\bin\\..\\include\\stdbool.h"
+
+
+
+#line 19 "..\\..\\..\\..\\Include\\simple_uart.h"
+#line 20 "..\\..\\..\\..\\Include\\simple_uart.h"
+#line 1 "..\\..\\..\\..\\Include\\nrf_delay.h"
+
+
+
+#line 5 "..\\..\\..\\..\\Include\\nrf_delay.h"
+
+ 
+
+static __asm void __inline nrf_delay_us(uint32_t volatile number_of_us)
+{
+loop
+        SUBS    R0, R0, #1
+        NOP
+        NOP
+        NOP
+        NOP
+        NOP
+        NOP
+        NOP
+        NOP
+        NOP
+        NOP
+        NOP
+        NOP
+        BNE    loop
+        BX     LR
+}
+#line 71 "..\\..\\..\\..\\Include\\nrf_delay.h"
+
+void nrf_delay_ms(uint32_t volatile number_of_ms);
+
+#line 21 "..\\..\\..\\..\\Include\\simple_uart.h"
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+ 
+uint8_t simple_uart_get(void);
+
+
+
+
+
+
+ 
+_Bool simple_uart_get_with_timeout(int32_t timeout_ms, uint8_t *rx_data);
+
+
+
+
+ 
+void simple_uart_put(uint8_t cr);
+
+
+
+
+
+ 
+void simple_uart_putstring(const uint8_t *str);
+
+
+
+
+
+
+
+ 
+void simple_uart_config(uint8_t rts_pin_number, uint8_t txd_pin_number, uint8_t cts_pin_number, uint8_t rxd_pin_number, _Bool hwfc);
+
+
+
+ 
+
+ 
+#line 17 "..\\..\\..\\..\\Source\\simple_uart\\simple_uart.c"
+#line 18 "..\\..\\..\\..\\Source\\simple_uart\\simple_uart.c"
 #line 1 "..\\..\\..\\..\\Include\\nrf_gpio.h"
 
 
@@ -9470,1002 +9584,95 @@ static __inline void nrf_gpio_port_clear(nrf_gpio_port_select_t port, uint8_t cl
 
  
 
-#line 9 "..\\main.c"
-#line 1 "..\\..\\..\\..\\Include\\nrf_delay.h"
+#line 19 "..\\..\\..\\..\\Source\\simple_uart\\simple_uart.c"
 
-
-
-#line 5 "..\\..\\..\\..\\Include\\nrf_delay.h"
-
- 
-
-static __asm void __inline nrf_delay_us(uint32_t volatile number_of_us)
+uint8_t simple_uart_get(void)
 {
-loop
-        SUBS    R0, R0, #1
-        NOP
-        NOP
-        NOP
-        NOP
-        NOP
-        NOP
-        NOP
-        NOP
-        NOP
-        NOP
-        NOP
-        NOP
-        BNE    loop
-        BX     LR
-}
-#line 71 "..\\..\\..\\..\\Include\\nrf_delay.h"
-
-void nrf_delay_ms(uint32_t volatile number_of_ms);
-
-#line 10 "..\\main.c"
-#line 1 "..\\..\\..\\..\\Include\\esb/nrf_esb.h"
-
-
-
-
-
-
-
-
-
-
-
- 
-
-
-
-
-
-
- 
-
-
-
-
-#line 25 "..\\..\\..\\..\\Include\\esb/nrf_esb.h"
-#line 26 "..\\..\\..\\..\\Include\\esb/nrf_esb.h"
-#line 1 "..\\..\\..\\..\\Include\\esb/nrf_esb_constants.h"
-
-
-
-
-
-
-
-
-
-
-
- 
-
-
-
-
-
-
-
- 
-
-
-
-
-
-
-
- 
-
-
- 
- 
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-               
-
-
- 
-#line 57 "..\\..\\..\\..\\Include\\esb/nrf_esb_constants.h"
-
-#line 85 "..\\..\\..\\..\\Include\\esb/nrf_esb_constants.h"
-
-
-
-
-
-
- 
-
-
- 
- 
- 
-
-
-
-
-
-
- 
-
- 
- 
- 
-
-
-
-
-
-
-
- 
-
-#line 136 "..\\..\\..\\..\\Include\\esb/nrf_esb_constants.h"
-
- 
-
- 
-
-#line 27 "..\\..\\..\\..\\Include\\esb/nrf_esb.h"
-
-
-
-
-
-
-
- 
-
-
-
-
-
- 
-typedef enum
-{
-  NRF_ESB_MODE_PTX,         
-  NRF_ESB_MODE_PRX,         
-} nrf_esb_mode_t;
-
-
-
-
-
-
- 
-typedef enum
-{
-  NRF_ESB_PACKET_USE_ACK,         
-  NRF_ESB_PACKET_NO_ACK,          
-} nrf_esb_packet_t ;
-
-
-
-
-
- 
-typedef enum 
-{
-    NRF_ESB_BASE_ADDRESS_LENGTH_2B,   
-    NRF_ESB_BASE_ADDRESS_LENGTH_3B,   
-    NRF_ESB_BASE_ADDRESS_LENGTH_4B    
-} nrf_esb_base_address_length_t;
-
-
-
-
-
- 
-typedef enum 
-{
-    NRF_ESB_OUTPUT_POWER_4_DBM,          
-    NRF_ESB_OUTPUT_POWER_0_DBM,          
-    NRF_ESB_OUTPUT_POWER_N4_DBM,         
-    NRF_ESB_OUTPUT_POWER_N8_DBM,         
-    NRF_ESB_OUTPUT_POWER_N12_DBM,        
-    NRF_ESB_OUTPUT_POWER_N16_DBM,        
-    NRF_ESB_OUTPUT_POWER_N20_DBM         
-} nrf_esb_output_power_t;
-
-
-
-
-
- 
-typedef enum 
-{
-    NRF_ESB_DATARATE_250_KBPS,            
-    NRF_ESB_DATARATE_1_MBPS,              
-    NRF_ESB_DATARATE_2_MBPS,              
-} nrf_esb_datarate_t;
-
-
-
-
-
- 
-typedef enum 
-{
-    NRF_ESB_CRC_OFF,            
-    NRF_ESB_CRC_LENGTH_1_BYTE,  
-    NRF_ESB_CRC_LENGTH_2_BYTE   
-} nrf_esb_crc_length_t;
-
-
-
-
-
-
- 
-typedef enum
-{
-	NRF_ESB_XOSC_CTL_AUTO,		
-	NRF_ESB_XOSC_CTL_MANUAL	    
-} nrf_esb_xosc_ctl_t;
-
- 
-
- 
- 
-
-
-
-
-
-
-
-
- 
-_Bool nrf_esb_init(nrf_esb_mode_t mode);
-
-
-
-
-
-
-
-
- 
-void nrf_esb_enable(void);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-void nrf_esb_disable(void);
-
-
-
-
-
- 
-_Bool nrf_esb_is_enabled(void);
-
- 
-
-
- 
-
- 
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-void nrf_esb_tx_success(uint32_t tx_pipe, int32_t rssi);
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-void nrf_esb_tx_failed(uint32_t tx_pipe);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-void nrf_esb_rx_data_ready(uint32_t rx_pipe, int32_t rssi);
-
-
-
-
-
-
-
-
- 
-void nrf_esb_disabled(void);
-
- 
-
-
- 
-
- 
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-_Bool nrf_esb_add_packet_to_tx_fifo(uint32_t pipe, uint8_t * payload, uint32_t payload_length, nrf_esb_packet_t packet_type);
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-_Bool nrf_esb_fetch_packet_from_rx_fifo(uint32_t pipe, uint8_t * payload, uint32_t* payload_length);
-
-
-
-
-
-
-
-
-
- 
-uint32_t nrf_esb_get_tx_fifo_packet_count(uint32_t pipe);
-
-
-
-
-
-
-
-
-
- 
-uint32_t nrf_esb_get_rx_fifo_packet_count(uint32_t pipe);
-
-
-
-
-
-
-
-
-
-
-
-
- 
-void nrf_esb_flush_tx_fifo(uint32_t pipe);
-
-
-
-
-
-
-
-
-
- 
-void nrf_esb_flush_rx_fifo(uint32_t pipe);
-
-
-
-
-
-
-
-
-
-
-
- 
-uint16_t nrf_esb_get_tx_attempts(void);
-
-
- 
-
-
- 
-
-
-
-
-
-
-
- 
- 
-
-
-
-
-
-
-
-
-
-
- 
-_Bool nrf_esb_set_mode(nrf_esb_mode_t mode);
-
-
-
-
-
-
- 
-nrf_esb_mode_t nrf_esb_get_mode(void);
-
-
-
-
-
-
-
-
-
- 
-_Bool nrf_esb_set_base_address_length(nrf_esb_base_address_length_t length);
-
-
-
-
-
-
- 
-nrf_esb_base_address_length_t nrf_esb_get_base_address_length(void);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-_Bool nrf_esb_set_base_address_0(uint32_t base_address);
-
-
-
-
-
-
- 
-uint32_t nrf_esb_get_base_address_0(void);
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-_Bool nrf_esb_set_base_address_1(uint32_t base_address);
-
-
-
-
-
-
- 
-uint32_t nrf_esb_get_base_address_1(void);
-
-
-
-
-
-
-
-
-
-
-
-
- 
-_Bool nrf_esb_set_address_prefix_byte(uint32_t pipe, uint8_t address);
-
-
-
-
-
-
-
-
-
-
-
- 
-_Bool nrf_esb_get_address_prefix_byte(uint32_t pipe, uint8_t* out_address);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-_Bool nrf_esb_set_enabled_prx_pipes(uint32_t pipes);
-
-
-
-
-
-
- 
-uint32_t nrf_esb_get_enabled_prx_pipes(void);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-_Bool nrf_esb_set_retransmit_delay(uint32_t delay_us);
-
-
-
-
-
-
- 
-uint32_t nrf_esb_get_retransmit_delay(void);
-
-
-
-
-
-
-
-
-
-
- 
-_Bool nrf_esb_set_max_number_of_tx_attempts(uint16_t attempts);
-
-
-
-
-
-
- 
-uint16_t nrf_esb_get_max_number_of_tx_attempts(void);
-
-
-
-
-
-
-
-
-
-
-
- 
-_Bool nrf_esb_set_channel(uint32_t channel);
-
-
-
-
-
-
- 
-uint32_t nrf_esb_get_channel(void);
-
-
-
-
-
-
-
-
- 
-_Bool nrf_esb_set_output_power(nrf_esb_output_power_t power);
-
-
-
-
-
-
- 
-nrf_esb_output_power_t nrf_esb_get_output_power(void);
-
-
-
-
-
-
-
-
- 
-_Bool nrf_esb_set_datarate(nrf_esb_datarate_t datarate);
-
-
-
-
-
-
- 
-nrf_esb_datarate_t nrf_esb_get_datarate(void);
-
-
-
-
-
-
-
-
-
-
-
- 
-_Bool nrf_esb_set_crc_length(nrf_esb_crc_length_t length);
-
-
-
-
-
-
- 
-nrf_esb_crc_length_t nrf_esb_get_crc_length(void);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-_Bool nrf_esb_set_xosc_ctl(nrf_esb_xosc_ctl_t xosc_ctl);
-
-
-
-
-
-
-
-
-
-
- 
-void nrf_esb_enable_dyn_ack(void);
-
-
-
-
-
- 
-void nrf_esb_disable_dyn_ack(void);
-
-
-
-
-
-
- 
-nrf_esb_xosc_ctl_t nrf_esb_get_xosc_ctl(void);
-
-
- 
- 
-#line 11 "..\\main.c"
-#line 1 "..\\..\\..\\..\\Include\\simple_uart.h"
- 
-
-
-
-
-
-
-
-
-
- 
-
-
-
-
- 
-
-#line 19 "..\\..\\..\\..\\Include\\simple_uart.h"
-#line 20 "..\\..\\..\\..\\Include\\simple_uart.h"
-#line 21 "..\\..\\..\\..\\Include\\simple_uart.h"
-
-
-
-
-
-
-
-
-
- 
-
-
-
-
- 
-uint8_t simple_uart_get(void);
-
-
-
-
-
-
- 
-_Bool simple_uart_get_with_timeout(int32_t timeout_ms, uint8_t *rx_data);
-
-
-
-
- 
-void simple_uart_put(uint8_t cr);
-
-
-
-
-
- 
-void simple_uart_putstring(const uint8_t *str);
-
-
-
-
-
-
-
- 
-void simple_uart_config(uint8_t rts_pin_number, uint8_t txd_pin_number, uint8_t cts_pin_number, uint8_t rxd_pin_number, _Bool hwfc);
-
-
-
- 
-
- 
-#line 12 "..\\main.c"
-
-
-
-
-
-
-
-
-
-
-
-
-
-static uint8_t my_tx_payload[] = {0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08, 0x09, 0x0A, 0x0B, 0x0C, 0x0D, 0x0E, 0x0F, 0x10, 0x11, 0x12, 0x13, 0x14 }; 
-
-
-static void esb_init(void) {
-	
-	
-	nrf_esb_set_xosc_ctl(NRF_ESB_XOSC_CTL_AUTO);
-	
-	
-	nrf_esb_init(NRF_ESB_MODE_PTX);
-	
-	
-	nrf_esb_set_crc_length(NRF_ESB_CRC_LENGTH_2_BYTE);
-	
-	
-	nrf_esb_set_datarate(NRF_ESB_DATARATE_2_MBPS);
-	
-	
-	nrf_esb_set_retransmit_delay(600);
-	
-	
-	nrf_esb_set_max_number_of_tx_attempts(5);
-	
-	
-	nrf_esb_set_enabled_prx_pipes(0x03);
-	
-	
-	nrf_esb_set_base_address_length(NRF_ESB_BASE_ADDRESS_LENGTH_2B);
-	
-	
-	nrf_esb_set_address_prefix_byte(0, 0x2C);
-	
-	
-	nrf_esb_set_base_address_0(0x3E3E);
-	
-	
-	nrf_esb_set_channel(20);
-
+  while (((NRF_UART_Type *) 0x40002000UL)->EVENTS_RXDRDY != 1)
+  {
+    
+  }
+  
+  ((NRF_UART_Type *) 0x40002000UL)->EVENTS_RXDRDY = 0;
+  return (uint8_t)((NRF_UART_Type *) 0x40002000UL)->RXD;
 }
 
-int main(void) {
+_Bool simple_uart_get_with_timeout(int32_t timeout_ms, uint8_t *rx_data)
+{
+  _Bool ret = 1;
+  
+  while (((NRF_UART_Type *) 0x40002000UL)->EVENTS_RXDRDY != 1)
+  {
+    if (timeout_ms-- >= 0)
+    {
+      
+      nrf_delay_us(1000);
+    }
+    else
+    {
+      ret = 0;
+      break;
+    }
+  }  
 
-	
-	nrf_gpio_cfg_output(18);
-	nrf_gpio_cfg_output(19);
-	nrf_gpio_pin_clear(18);
-	nrf_gpio_pin_clear(19);
-	
-	
-	simple_uart_config(0, 9, 0, 11, 0);
-	
-	
-	esb_init();
-	
-	
-	nrf_esb_add_packet_to_tx_fifo(0, my_tx_payload, 20, NRF_ESB_PACKET_USE_ACK);
+  if (timeout_ms >= 0)
+  {
+    
+      ((NRF_UART_Type *) 0x40002000UL)->EVENTS_RXDRDY = 0;
+      *rx_data = (uint8_t)((NRF_UART_Type *) 0x40002000UL)->RXD;
+  }
 
-	nrf_esb_enable();
-
-	while (1) {
-		
-		nrf_delay_ms(500);
-		nrf_esb_add_packet_to_tx_fifo(0, my_tx_payload, 20, NRF_ESB_PACKET_USE_ACK);
-	}
-
+  return ret;
 }
 
-void nrf_esb_tx_success(uint32_t tx_pipe, int32_t rssi) {
-	
-	nrf_gpio_pin_toggle(18);
+void simple_uart_put(uint8_t cr)
+{
+  ((NRF_UART_Type *) 0x40002000UL)->TXD = (uint8_t)cr;
+
+  while (((NRF_UART_Type *) 0x40002000UL)->EVENTS_TXDRDY!=1)
+  {
+    
+  }
+
+  ((NRF_UART_Type *) 0x40002000UL)->EVENTS_TXDRDY=0;
 }
 
-
-void nrf_esb_tx_failed(uint32_t tx_pipe) {
-	
-	nrf_gpio_pin_toggle(19);
-	nrf_esb_flush_tx_fifo(0);
+void simple_uart_putstring(const uint8_t *str)
+{
+  uint_fast8_t i = 0;
+  uint8_t ch = str[i++];
+  while (ch != '\0')
+  {
+    simple_uart_put(ch);
+    ch = str[i++];
+  }
 }
 
+void simple_uart_config(  uint8_t rts_pin_number,
+                          uint8_t txd_pin_number,
+                          uint8_t cts_pin_number,
+                          uint8_t rxd_pin_number,
+                          _Bool    hwfc)
+{
+ 
+  nrf_gpio_cfg_output(txd_pin_number);
+  nrf_gpio_cfg_input(rxd_pin_number, NRF_GPIO_PIN_NOPULL);  
 
-void nrf_esb_rx_data_ready(uint32_t rx_pipe, int32_t rssi) {
-	
-	nrf_esb_flush_rx_fifo(0);
+  ((NRF_UART_Type *) 0x40002000UL)->PSELTXD = txd_pin_number;
+  ((NRF_UART_Type *) 0x40002000UL)->PSELRXD = rxd_pin_number;
+ 
+  if (hwfc)
+  {
+    nrf_gpio_cfg_output(rts_pin_number);
+    nrf_gpio_cfg_input(cts_pin_number, NRF_GPIO_PIN_NOPULL);
+    ((NRF_UART_Type *) 0x40002000UL)->PSELCTS = cts_pin_number;
+    ((NRF_UART_Type *) 0x40002000UL)->PSELRTS = rts_pin_number;
+    ((NRF_UART_Type *) 0x40002000UL)->CONFIG  = ((1UL) << (0UL));
+  }
+
+  ((NRF_UART_Type *) 0x40002000UL)->BAUDRATE         = ((0x01D7E000UL) << (0UL));
+  ((NRF_UART_Type *) 0x40002000UL)->ENABLE           = ((0x04UL) << (0UL));
+  ((NRF_UART_Type *) 0x40002000UL)->TASKS_STARTTX    = 1;
+  ((NRF_UART_Type *) 0x40002000UL)->TASKS_STARTRX    = 1;
+  ((NRF_UART_Type *) 0x40002000UL)->EVENTS_RXDRDY    = 0;
 }
-
-
-void nrf_esb_disabled(void) {
-}
-

@@ -22,7 +22,7 @@
 #define PIPE_NUMBER 0 // use pipe 0
 #define TX_PAYLOAD_LENGTH 20 // payload length of 10 bytes
 
-static uint8_t my_tx_payload[] = {0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08, 0x09, 0x0A, 0x0B, 0x0C, 0x0D, 0x0E, 0x0F, 0x10, 0x11, 0x12, 0x13, 0x14 }; // payload to send
+static uint8_t my_rx_payload[20]; // payload received
 
 // Initialise Enhanced Shockburst
 static void esb_init(void) {
@@ -30,8 +30,8 @@ static void esb_init(void) {
 	// Set oscillator control to automatic
 	nrf_esb_set_xosc_ctl(NRF_ESB_XOSC_CTL_AUTO);
 	
-	// Initialise TX mode
-	nrf_esb_init(NRF_ESB_MODE_PTX);
+	// Initialise RX mode
+	nrf_esb_init(NRF_ESB_MODE_PRX);
 	
 	// Set length of CRC to 2 bytes
 	nrf_esb_set_crc_length(NRF_ESB_CRC_LENGTH_2_BYTE);
@@ -75,34 +75,33 @@ int main(void) {
 	
 	// Initialise ESB
 	esb_init();
-	
-	// Add packet into TX queue
-	nrf_esb_add_packet_to_tx_fifo(PIPE_NUMBER, my_tx_payload, TX_PAYLOAD_LENGTH, NRF_ESB_PACKET_USE_ACK);
 
 	nrf_esb_enable();
 
 	while (1) {
-		// Send a packet every 500ms
-		nrf_delay_ms(500);
-		nrf_esb_add_packet_to_tx_fifo(PIPE_NUMBER, my_tx_payload, TX_PAYLOAD_LENGTH, NRF_ESB_PACKET_USE_ACK);
 	}
 
 }
-// If an ACK was received, we send another packet.
+// Not being used. If an ACK was received, we send another packet.
 void nrf_esb_tx_success(uint32_t tx_pipe, int32_t rssi) {
-	// Toggle LED0 to indicate success.
-	nrf_gpio_pin_toggle(LED_0);
+	
 }
 
-// If the transmission failed, send a new packet.
+// Not being used. If the transmission failed, send a new packet.
 void nrf_esb_tx_failed(uint32_t tx_pipe) {
-	// Toggle LED1 to indicate failure and flux TX fifo
-	nrf_gpio_pin_toggle(LED_1);
-	nrf_esb_flush_tx_fifo(PIPE_NUMBER);
+	
 }
 
-// Not being used. As there no ACK Payload
+// Called when data recieved over RADIO RX
 void nrf_esb_rx_data_ready(uint32_t rx_pipe, int32_t rssi) {
+	uint32_t rx_payload_length;
+	
+	// Fetch data from RX FIFO
+	nrf_esb_fetch_packet_from_rx_fifo(PIPE_NUMBER, my_rx_payload, &rx_payload_length);
+	if(rx_payload_length > 0) {
+		nrf_gpio_pin_toggle(LED_0);
+		simple_uart_putstring(my_rx_payload);
+	}
 	// Flushing Rx fifo so that there is space for future transmits
 	nrf_esb_flush_rx_fifo(PIPE_NUMBER);
 }
